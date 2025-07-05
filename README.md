@@ -57,6 +57,24 @@
 
 ## 🛠️ Technical Architecture
 
+### File Structure
+\`\`\`
+EasyNote-extension/
+├── manifest.json              # Extension configuration
+├── popup.html                 # Main popup interface
+├── options.html              # Settings page
+├── background.js             # Service worker for background tasks
+├── styles/
+│   ├── popup.css            # Popup styling
+│   └── options.css          # Options page styling
+├── scripts/
+│   ├── popup.js             # Main popup functionality
+│   ├── options.js           # Settings management
+│   └── firebase-config.js   # Cloud sync configuration
+├── icons/                   # Extension icons
+└── README.md               # Documentation
+\`\`\`
+
 ### Key Components
 
 #### Popup Interface (`popup.js`)
