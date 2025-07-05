@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteMaster Settings</title>
+    <link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>NoteMaster Settings</h1>
+            <p class="subtitle">Customize your note-taking experience</p>
+        </header>
+
+        <div class="settings-grid">
+            <!-- Appearance Settings -->
+            <section class="settings-section">
+                <h2>Appearance</h2>
+                <div class="setting-item">
+                    <label for="themeSelect">Theme</label>
+                    <select id="themeSelect" class="setting-input">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="auto">Auto (System)</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="fontSizeRange">Font Size</label>
+                    <div class="range-container">
+                        <input type="range" id="fontSizeRange" class="setting-range" min="12" max="20" value="14" />
+                        <span id="fontSizeValue" class="range-value">14px</span>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label for="fontFamilySelect">Font Family</label>
+                    <select id="fontFamilySelect" class="setting-input">
+                        <option value="system">System Default</option>
+                        <option value="serif">Serif</option>
+                        <option value="monospace">Monospace</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Keyboard Shortcuts -->
+            <section class="settings-section">
+                <h2>Keyboard Shortcuts</h2>
+                <div class="shortcuts-list">
+                    <div class="shortcut-item">
+                        <span class="shortcut-action">Open Quick Note</span>
+                        <kbd class="shortcut-key">Ctrl+Shift+N</kbd>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-action">Search Notes</span>
+                        <kbd class="shortcut-key">Ctrl+Shift+F</kbd>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-action">Bold Text</span>
+                        <kbd class="shortcut-key">Ctrl+B</kbd>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-action">Italic Text</span>
+                        <kbd class="shortcut-key">Ctrl+I</kbd>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-action">Save Note</span>
+                        <kbd class="shortcut-key">Ctrl+S</kbd>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Export Settings -->
+            <section class="settings-section">
+                <h2>Export</h2>
+                <div class="setting-item">
+                    <label for="exportFormat">Default Export Format</label>
+                    <select id="exportFormat" class="setting-input">
+                        <option value="json">JSON</option>
+                        <option value="txt">Plain Text</option>
+                        <option value="md">Markdown</option>
+                        <option value="html">HTML</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <button id="exportAllBtn" class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Export All Notes
+                    </button>
+                </div>
+            </section>
+
+            <!-- Data Management -->
+            <section class="settings-section">
+                <h2>Data Management</h2>
+                <div class="setting-item">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="autoSave" class="setting-checkbox" checked />
+                        <span class="checkmark"></span>
+                        Auto-save notes while typing
+                    </label>
+                </div>
+                <div class="setting-item danger-zone">
+                    <h3>Danger Zone</h3>
+                    <button id="clearAllBtn" class="btn btn-danger">Clear All Notes</button>
+                    <p class="warning-text">This action cannot be undone!</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Save Button -->
+        <div class="save-container">
+            <button id="saveSettingsBtn" class="btn btn-primary btn-large">Save Settings</button>
+            <div id="saveStatus" class="save-status"></div>
+        </div>
+    </div>
+
+    <script src="scripts/options.js"></script>
+</body>
+</html>
