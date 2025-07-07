@@ -1,5 +1,5 @@
 /**
- * NoteMaster Options Script
+ * EasyNote Options Script
  * Handles the settings/options page functionality including theme management
  * and export operations.
  */
@@ -161,7 +161,7 @@ class OptionsManager {
 
       const format = this.settings.exportFormat
       let content = ""
-      let filename = `notemaster_export_${new Date().toISOString().split("T")[0]}`
+      let filename = `EasyNote_export_${new Date().toISOString().split("T")[0]}`
 
       switch (format) {
         case "json":
@@ -206,7 +206,7 @@ class OptionsManager {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NoteMaster Export</title>
+    <title>EasyNote Export</title>
     <meta charset="UTF-8">
     <style>
         body { 
@@ -255,7 +255,7 @@ class OptionsManager {
 </head>
 <body>
     <div class="header">
-        <h1>NoteMaster Export</h1>
+        <h1>EasyNote Export</h1>
         <p class="export-info">Exported on ${new Date().toLocaleDateString()} | ${notes.length} notes</p>
     </div>
     ${notes

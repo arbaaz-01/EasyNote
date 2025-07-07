@@ -1,5 +1,5 @@
 /**
- * NoteMaster Background Script (Service Worker)
+ * EasyNote Background Script (Service Worker)
  * Handles background tasks, context menus, keyboard shortcuts,
  * and cloud synchronization scheduling.
  */
@@ -29,14 +29,14 @@ class BackgroundManager {
       // Create context menu for selected text
       chrome.contextMenus.create({
         id: "saveSelectedText",
-        title: "Save to NoteMaster",
+        title: "Save to EasyNote",
         contexts: ["selection"],
       })
 
       // Create context menu for pages
       chrome.contextMenus.create({
         id: "savePageInfo",
-        title: "Save page info to NoteMaster",
+        title: "Save page info to EasyNote",
         contexts: ["page"],
       })
     })
@@ -83,7 +83,7 @@ class BackgroundManager {
     }
 
     await this.saveNote(note)
-    this.showNotification("Text saved to NoteMaster!")
+    this.showNotification("Text saved to EasyNote!")
   }
 
   /**
@@ -101,7 +101,7 @@ class BackgroundManager {
     }
 
     await this.saveNote(note)
-    this.showNotification("Page saved to NoteMaster!")
+    this.showNotification("Page saved to EasyNote!")
   }
 
   /**
@@ -215,10 +215,10 @@ class BackgroundManager {
     // Create welcome note
     const welcomeNote = {
       id: this.generateId(),
-      title: "Welcome to NoteMaster!",
+      title: "Welcome to Easy Note!",
       content: `
-        <h2>Welcome to NoteMaster!</h2>
-        <p>Thank you for installing NoteMaster, your comprehensive note-taking companion.</p>
+        <h2>Welcome to Easy Note!</h2>
+        <p>Thank you for installing Easy Note, your comprehensive note-taking companion.</p>
         
         <h3>Getting Started:</h3>
         <ul>
@@ -246,7 +246,7 @@ class BackgroundManager {
           <li>Cloud synchronization (coming soon)</li>
         </ul>
         
-        <p><em>Right-click on any webpage to save selected text or page information directly to NoteMaster!</em></p>
+        <p><em>Right-click on any webpage to save selected text or page information directly to EasyNote!</em></p>
         
         <p>Visit the settings page to customize your experience and explore all available options.</p>
       `,
@@ -259,7 +259,7 @@ class BackgroundManager {
     await this.saveNote(welcomeNote)
 
     // Show welcome notification
-    this.showNotification("Welcome to NoteMaster! Check out your first note to get started.")
+    this.showNotification("Welcome to EasyNote! Check out your first note to get started.")
   }
 
   /**
@@ -271,7 +271,7 @@ class BackgroundManager {
     // Perform any necessary data migrations here
     // For example, if note structure changed between versions
 
-    this.showNotification("NoteMaster has been updated with new features!")
+    this.showNotification("EasyNote has been updated with new features!")
   }
 
   /**
@@ -281,7 +281,7 @@ class BackgroundManager {
     chrome.notifications.create({
       type: "basic",
       iconUrl: "icons/icon48.png",
-      title: "NoteMaster",
+      title: "EasyNote",
       message: message,
     })
   }
