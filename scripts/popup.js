@@ -1,11 +1,11 @@
 /**
- * NoteMaster Popup Script
+ * EasyNote Popup Script
  * Handles the main popup interface functionality including note management,
  * search, filtering, and rich text editing capabilities.
  */
 
 
-class NoteMaster {
+class EasyNote {
   constructor() {
     this.notes = []
     this.currentNote = null
@@ -20,7 +20,7 @@ class NoteMaster {
    */
   async init() {
     try {
-      console.log("NoteMaster initializing...")
+      console.log("EasyNote initializing...")
       await this.loadSettings()
       await this.loadNotes()
       this.setupEventListeners()
@@ -28,9 +28,9 @@ class NoteMaster {
       this.applyTheme()
       this.renderNotes()
       this.updateSyncStatus()
-      console.log("NoteMaster initialized successfully")
+      console.log("EasyNote initialized successfully")
     } catch (error) {
-      console.error("Error initializing NoteMaster:", error)
+      console.error("Error initializing EasyNote:", error)
     }
   }
 
@@ -676,7 +676,7 @@ class NoteMaster {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NoteMaster Export</title>
+    <title>Easy Note Export</title>
     <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
         .note { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
@@ -686,7 +686,7 @@ class NoteMaster {
     </style>
 </head>
 <body>
-    <h1>NoteMaster Export</h1>
+    <h1>Easy Note Export</h1>
     <p>Exported on ${new Date().toLocaleDateString()}</p>
     ${this.notes
       .map(
@@ -822,25 +822,25 @@ class NoteMaster {
 
 // Initialize the application when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM loaded, initializing NoteMaster...")
+  console.log("DOM loaded, initializing Easy Note...")
   try {
-    window.noteMaster = new NoteMaster()
+    window.EasyNote = new EasyNote()
   } catch (error) {
-    console.error("Failed to initialize NoteMaster:", error)
+    console.error("Failed to initialize Easy Note:", error)
   }
 })
 
 // Also try immediate initialization in case DOMContentLoaded already fired
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded (delayed), initializing NoteMaster...")
-    if (!window.noteMaster) {
-      window.noteMaster = new NoteMaster()
+    console.log("DOM loaded (delayed), initializing EasyNote...")
+    if (!window.EasyNote) {
+      window.EasyNote = new EasyNote()
     }
   })
 } else {
-  console.log("DOM already loaded, initializing NoteMaster immediately...")
-  window.noteMaster = new NoteMaster()
+  console.log("DOM already loaded, initializing Easy Note immediately...")
+  window.EasyNote = new EasyNote()
 }
 
 // Add CSS animation for save status
