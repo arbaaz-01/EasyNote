@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "EasyNote",
+  "name": "Easy Note",
   "version": "1.0.0",
-  "description": "A comprehensive note-taking extension with rich text formatting, local storage, and advanced organization features.",
+  "description": "A note-taking extension with rich text formatting, local storage, and organization features.",
   "permissions": ["storage", "activeTab", "contextMenus", "commands", "notifications"],
   "host_permissions": [],
   "background": {
@@ -10,7 +10,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "NoteMaster",
+    "default_title": "Easy Note",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
